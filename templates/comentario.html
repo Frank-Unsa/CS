@@ -1,0 +1,62 @@
+<div class="coment">
+
+    <p>Comentarios:</p>
+    <div class="comentarios-content">
+        {%for comentario in comentarios%}
+        
+        <div class="num-resp">
+            <span>{{forloop.counter}}</span><span comentario_id="{{comentario.0.id}}"
+            {%if user.username == comentario.2.usuario %}
+            class="comentario">{{comentario.0.contenido}}</span>
+             <!--Cuerpo del comentario-->
+        </div>
+           
+            <div class="conten-acciones">
+                <span comentario_id="{{comentario.0.id}}" class="eliminarC" style="cursor: pointer">Eliminar</span>
+                <span comentario_id="{{comentario.0.id}}" class="editarC" style="cursor: pointer">editar</span>
+            </div>
+           
+            {%else%}
+            <span>{{comentario.0}} </span>
+            {%endif%}
+        <div class="contenedor-boton-descripcion">
+            {%if user.username %}
+            <span><span class="comentarRespuesta botones-index" 
+                style="cursor:pointer" id_comentario="{{comentario.0.id}}">Comentar</span></span>
+            {%endif%}
+            <div class="fila">
+
+            </div>
+            <!--aqui el usuario-->
+            <div class="columna">
+                <div class="alinedo-usuario">
+                    <div class="alin-usu-es">Usuario:</div>
+                    <br>
+                    <a  href="/usuario/?usuario={{comentario.2.id}}">{{comentario.2.usuario}}</a>
+                </div>
+                <div class="alin-usu-es" >
+                    <span>Fecha de modificación {{comentario.0.fecha_de_modificacion}}</span>
+                </div>
+            </div>
+            
+        </div>
+       
+        <br>
+        
+        <br><br>
+        {%if comentario.1%}
+            <p>{{comentario.1}} comentarios</p>
+            <button class="subbotonComentario botones-index" id="scom{{comentario.0.id}}" id_comentario="{{comentario.0.id}}" style="cursor:pointer;">ver comentarios</button>
+            {%endif%}
+            
+            <div id="subcomentario{{comentario.0.id}}"></div>
+        {%endfor%}
+    </div>
+    {%if request.session.is_empty%}
+    <h4>no se inicio session</h4>
+    {%else%}
+    
+    {%endif%}
+</div>
+
+

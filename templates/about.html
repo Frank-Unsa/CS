@@ -1,0 +1,136 @@
+{% extends 'base/base.html' %}
+
+<head>
+    <title>{% block title %} Sobre Nosotros {% endblock %}</title>
+</head>
+
+<body>
+    {% block content %}
+    {% load static %}
+    <div class="contenido">
+
+        <div class="padre-about">
+
+            <div class="hijo-about">
+
+                <table style=" border:1">
+
+                    <tbody>
+
+                        <tr>
+                            
+                            <td style="vertical-align: middle; height: 600px;">
+                                <img class="alignright size-full wp-image-71" alt="webi"
+                                    src="{% static 'logo-removebg.png' %}" width="300" height="400" />
+
+                            </td>
+                          
+                            <td style="width: 600px;">
+                                <div class="tabla-center">
+                                    <h1>Sobre Nosotros</h1>
+                                    <h2>Mision</h2>
+                                    <p>Nuestro sistema fue creado con la intención de poder proporcionar un foro de
+                                        preguntas y respuestas a la gente la cual lo necesite, y así poder ayudarlos en
+                                        su día a día.</p>
+                                    <h2>Vision</h2>
+                                    <p>Queremos que la gente use nuestro aplicativo web para poder compartir ideas,
+                                        dudas y sus comentarios a la gente que lo necesita, para así poder ser una
+                                        página web reconocida mundialmente.</p>
+                                </div>
+
+                            </td>
+                            
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="Equipo">
+        <hr size="2px" width="50%" text-align="center" color="#47525E" />
+        <h1>Equipo de Desarrollo</h1>
+        <div class="imgWrapper4">
+            <div class="imgResponsiva">
+                <img src="{% static 'logoAplicacion.jpeg' %}" />
+                <div>
+                    <h1>Arnold Ismael Sucasaire Torres</h1>
+                    <h1>Developer</h1>
+                </div>
+            </div>
+            <div class="imgResponsiva ">
+                <img src="{% static 'logoAplicacion.jpeg' %}" />
+                <div>
+                    <h1>Rosario Lohana Alegre Linares</h1>
+                    <h1>Developer</h1>
+                </div>
+            </div>
+            <div class="imgResponsiva">
+                <img src="{% static 'logoAplicacion.jpeg' %}" />
+                <div>
+                    <h1>Luis Emanuel Araoz Valencia</h1>
+                    <h1>Developer</h1>
+                </div>
+            </div>
+            <div class="imgResponsiva ">
+                <img src="{% static 'logoAplicacion.jpeg' %}" />
+                <div>
+                    <h1>Rodrigo Sebastian Huaman Maqque</h1>
+                    <h1>Developer</h1>
+                </div>
+            </div>
+            <div class="imgResponsiva ">
+                <img src="{% static 'logoAplicacion.jpeg' %}" />
+                <div>
+                    <h1>Anyela Stefhany Mayta Yrco</h1>
+                    <h1>Developer</h1>
+                </div>
+            </div>
+        </div>
+        <div class="imgWrapper4">
+            <div class="imgResponsiva">
+                <img src="{% static 'logoAplicacion.jpeg' %}" />
+                <div>
+                    <h1>Marco Antonio Quiña Mamani</h1>
+                    <h1>Developer</h1>
+                </div>
+            </div>
+            <div class="imgResponsiva ">
+                <img src="{% static 'logoAplicacion.jpeg' %}" />
+                <div>
+                    <h1>Fidel Ronaldo Chavez Carpio</h1>
+                    <h1>Developer</h1>
+                </div>
+            </div>
+            <div class="imgResponsiva">
+                <img src="{% static 'logoAplicacion.jpeg' %}" />
+                <div>
+                    <h1>Carlos Bryan Gallegos Batallanos</h1>
+                    <h1>Developer</h1>
+                </div>
+            </div>
+            <div class="imgResponsiva ">
+                <img src="{% static 'logoAplicacion.jpeg' %}" />
+                <div>
+                    <h1>Jimy Gabriel Revilla Tellez</h1>
+                    <h1>Developer</h1>
+                </div>
+            </div>
+            <div class="imgResponsiva ">
+                <img src="{% static 'logoAplicacion.jpeg' %}" />
+                <div>
+                    <h1>Frank Leny Capa Usca</h1>
+                    <h1>Developer</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br> <br>
+    <hr size="2px" width="50%" text-align="center" color="#47525E" />
+
+
+    {% endblock %}
+</body>
+
+</html>

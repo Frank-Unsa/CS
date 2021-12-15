@@ -1,0 +1,901 @@
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.2em;
+    margin: 0;
+}
+h1{
+    font-size: 2rem;
+    line-height: 1.3em;
+}
+.container{
+    width: 90%;
+    /*max-width: 850px;*/
+    margin: 0 auto;
+}
+.header{
+    background: white;
+    color: #47525E;
+    z-index: 2;
+    position: fixed ;/*posicion del navegador fijo*/
+    left: 0;
+    top: 0;
+    right: 0;
+
+}
+.header a{
+    background: white;
+    color: #47525E;
+    text-decoration: none;
+}
+.logo-nav-container{
+    display: flex;
+    justify-content: space-between;/*hace que los elmentos flex se vaya uno a la izquierda otro a la derecha*/
+    align-items: center;/*Centrar los elementos*/
+    flex-wrap: wrap;/*Si los elemntos sobrepasan de la linea pase a la siguiente*/
+}
+.logo{
+    letter-spacing: 1px;
+    font-size: 1em;
+}
+.menu-icon{
+    display: none;
+}
+.navigation ul{/*Hacemos que los ul no tengan*/
+   margin: 0;
+   padding: 0;
+   list-style: none;
+}
+.navigation ul li{ /*Hacemos que esten uno del lado del otro*/
+    display: inline-block;
+}
+.navigation ul li a{
+    display: block;
+    padding: 0.5rem 1rem;
+    
+    transition: all 0.4s linear;/*Para animar los botones*/
+}
+.navigation ul li a:hover{
+    background: #ccc;
+}
+
+.botones {
+    border: 0; /*anchura, estilo y color borde*/
+    padding: 8px; /*espacio alrededor texto*/
+    background-color: #47525E; /*color botón*/
+    color: #ffffff; /*color texto*/
+    text-decoration: none; /*decoración texto*/
+   
+    font-family: Georgia, 'Times New Roman', Times, serif; /*tipografía texto*/
+    border-radius: 10px; /*bordes redondos*/
+    
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+.botones:hover {
+    background-color: #ccc; /* Green */
+    color: #47525E;
+}
+
+.wrapper {
+    padding-top: 4rem;
+    min-height: calc(80% - 4rem);
+    background: #E5E9F2;
+    padding-bottom: 2rem;
+  }
+.footer{
+    background: #47525E;
+    padding: 2rem 0;
+    text-align: center;
+}
+@media only screen and (max-width: 1150px){
+    .menu-icon{
+        display: block;
+        cursor: pointer; 
+        padding: 0.5rem 1rem;
+    }
+    .navigation{
+        width: 100%;
+        margin-top: 1rem;
+    }
+    .navigation ul{
+        display: none;
+    }
+    .navigation ul.show{
+       display: block; 
+    }
+     .navigation ul li{ /*Hacemos que esten uno del lado del otro*/
+       display: block;
+     }
+     .navigation ul li a{
+         display: block;
+         padding: 0.5rem 0;
+         transition: all 0.4s linear;/*Para animar los botones*/
+     }
+   
+    
+}
+.container2{
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+}
+.logo-nav-container2{
+    display: flex;
+    justify-content: space-between;/*hace que los elmentos flex se vaya uno a la izquierda otro a la derecha*/
+    align-items: center;/*Centrar los elementos*/
+    flex-wrap: wrap;/*Si los elemntos sobrepasan de la linea pase a la siguiente*/
+}
+.footer .navigation ul li a {
+    text-decoration: none;
+    color: white;
+}
+.logo1{
+    width: 65px;
+    height: 90px;
+}
+.logo2{
+    width: 25px;
+    height: 40px;
+}
+/*redes sociales*/
+.redesSociales{
+    text-align: right;
+}
+.fa-facebook-square {
+    font-size: 52px;
+    color: gray;
+}
+.fa-facebook-square:hover {
+    color:#3B5998;
+}
+.fa-twitter-square {
+    font-size: 52px;
+    font-weight: 100px;
+    color: gray;
+}
+.fa-twitter-square:hover {
+    color:#55acee;
+    }
+.footer p{
+    color: white;
+    
+}
+/********* Busqueda FORO **********/
+
+.foro-content input{
+    border: 0;
+    background-color: none;
+    display: block;
+    margin: 10px auto;
+    text-align: center;
+    outline: none;
+    border: #47525E 2px solid;
+    padding:#47525E 5px 5px;
+    width: 200px;
+    
+    border-radius: 24px;
+}
+
+.foro-content input:focus {
+    width: 250px;
+    border-color: #47525E;
+}
+#date{
+    border: 0;
+    background-color: none;
+    display: block;
+    margin: 10px auto;
+    text-align: center;
+    outline: none;
+    border: #47525E 2px solid;
+    padding:#47525E 5px 5px;
+    width: 200px;
+    color: #47525E ;
+    
+    border-radius: 24px;
+
+}
+/*prueba selec*/
+.select-css {
+    display: block;
+    font-size: 16px;
+    font-family: 'Verdana', sans-serif;
+    
+    color: #444;
+    line-height: 1;
+    padding: .0em 0.8em .2em .2em;
+    width: 150px;
+    max-width: 100%; 
+    box-sizing: border-box;
+   margin: 20px auto;
+    border: 1px solid #aaa;
+    box-shadow: 0 1px 0 1px rgba(0,0,0,.03);
+    border-radius: .3em;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'),
+      linear-gradient(to bottom, #ffffff 0%,#f7f7f7 100%);
+    background-repeat: no-repeat, repeat;
+    background-position: right .7em top 50%, 0 0;
+    background-size: .65em auto, 100%;
+  }
+  .select-css::-ms-expand {
+    display: none;
+   
+  }
+  .select-css:hover {
+    border-color: #888;
+  }
+  .select-css:focus {
+    border-color: #aaa;
+    box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+    box-shadow: 0 0 0 3px -moz-mac-focusring;
+    color: #222; 
+    font-size: 12px;
+  
+    outline: none;
+  }
+  .select-css option {
+    font-weight:normal;
+    font-size: 12px;
+  }
+  
+  
+  .classOfElementToColor:hover {background-color:red; color:black}
+  
+  .select-css option[selected] {
+      background-color: white;
+    
+  }
+  
+#buscar{
+    border: 0; /*anchura, estilo y color borde*/
+    padding: 8px; /*espacio alrededor texto*/
+    background-color: #47525E; /*color botón*/
+    color: #ffffff; /*color texto*/
+    text-decoration: none; /*decoración texto*/
+   
+    font-family: Georgia, 'Times New Roman', Times, serif; /*tipografía texto*/
+    border-radius: 10px; /*bordes redondos*/
+    
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+#buscar:hover {
+    background-color: #ccc; /* Green */
+    color: #47525E;
+}
+
+
+
+.foro-content{
+    background: #8492A6;
+    display: block;
+    width: 100%;
+}
+/********* Busqueda **********/
+.busqueda{
+    width: 70%;
+    background: #8492A6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 15%;
+}
+.back-preg{
+    /*background-color: white;*/
+    /*background-color:red;*/
+    width: 100%;
+    height: 100%;
+    margin-bottom: -25px;
+}
+
+.preguntas{
+    /*background:#ffffff;*/
+   
+    width: 90%;
+    padding-left: 10%;
+  
+   
+}
+.preguntas a{
+    text-decoration: none;
+}
+.content-pre{
+   /* border: #47525E 1.5px solid;*/
+    background: white;
+}
+.content-pregun{
+    /*padding: 0.5rem 5rem;*/
+    /*border: #47525E 1.5px;*/
+    width: 100%;
+    /*background: #8492A6;*/
+   
+}
+
+
+.conentsubtemas{
+    margin: 0;
+    padding: 0;
+}
+.conentsubtemas a{
+    width: auto;
+    display: block;
+    padding: 0.5rem 0.5rem;
+    color: #47525E;
+    text-decoration: none;
+    border-radius: 10px ;
+    transition: all 0.4s linear;/*Para animar los botones*/
+}
+
+.conentsubtemas a:hover{
+        background: #47525E;
+        color: white;
+}
+.filapre{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    font-size: 15px;
+}
+.column-pre{
+    display: flex;
+    float: right;
+    font-size: 14px;
+    flex-direction: column;
+    margin: 0;
+    padding: 0
+}
+.content-desc{
+    padding: 0.5rem 2rem;
+    border: #47525E 1px;
+    width: 100%;
+
+    background: white;
+}
+
+.pregunta-foro{
+    font-size: 20px;
+    background: #aaa;
+  
+}
+.content-pre-foro{
+    font-size: 15px;
+    background: #fff;
+   /* border: #47525E 0.5px solid;*/
+    border-radius: 0px 0px 10px 10px;
+    width: 100%;
+    min-height: 4rem;
+    height: auto;
+}
+/***Respuestas**/
+.content-veres{
+    border: #47525E 1.5px solid;
+    background: white;
+    text-align: center;
+}
+.content-resp{
+    border: #47525E 3px solid;
+    border-radius: 0px 10px 39px 22px;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+
+}
+.content-respues{
+    padding: 0.5rem 5rem;
+    align-items: center;
+}
+.acciones-resp{
+    /*background: red;*/
+}
+.title-comentario{
+/*background: yellow;*/
+}
+#n_respuestas{
+    /*color: red;*/
+}
+.resp-con{
+    border: #47525E 1.5px;
+    /*background: yellow;*/
+    border-radius: 11px;
+}
+
+.num-resp{
+    
+   padding: 1rem 1rem;
+    background: white; /**base del content*/
+    border-color: #aaaaaa;
+    border-width: 2px;
+    border-radius: 0px 10px 10px 10px;
+    width: 100%;
+    border-style: dashed;
+    min-height: 4rem;
+    height: auto;
+   
+    
+}
+.conten-acciones{
+   margin-bottom: -10px;
+     /*background: saddlebrown;*/
+    width:100%;
+    text-align: right;
+}
+.acciones-like{
+    float:left;
+    width: 96%;
+    margin-left: 2%;
+    margin-right: 2%;
+   /*background: red;*/
+    margin-top:-4px;
+    
+}
+.acciones-like span{
+    padding: 5px 5px ;
+}
+.conten-button-coment{
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.botonComentario{
+    float:right;
+    margin-top:-40px;
+    
+}
+.subbotonComentario{
+    float: right;
+    margin-top: -80px;
+}
+.Conten-ButonComent{
+    /*background: red;*/
+    width: 80%;
+    margin-bottom: 10px;
+    text-align: right;
+}
+
+.conten-button-coment{
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    /*background: green;*/
+    font-style: italic;
+}
+
+.content-form-agregar{
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    display: flex;
+   /* background: rgb(80, 122, 55);*/
+    justify-content: space-between;
+}
+/********************Comentario *****************/
+
+.coment{
+    border: #47525E 1.5px;
+    background: #adc6e255;
+    border: #47525E 1.5px;
+    border-radius: 11px;
+    margin-left: 10%;
+    /*margin-right: 10%;
+    width: 80%;*/
+}
+.comentarios-content{
+    margin-left: 20px;
+    margin-right: 0;
+}
+.coment h3{
+    font-size: 17px;
+}
+.coment h4{
+    font-size: 15px;
+    color: red;
+    text-align: center;
+}
+.content-respues .alinedo-usuario{
+    display: flex;
+    align-items: flex-start;
+    /*background: red;*/
+    margin: -15 0;
+    
+    
+}
+.alinedo-usuario-p{
+    display: flex;
+    width: 90%;
+    align-items: flex-start;
+    /*background: red;*/
+    margin: 0 0;
+}
+.contenedor-boton-descripcion{
+    display: flex;
+    flex-direction: row;
+    /*background: red;*/
+}
+.columna{
+    display: flex;
+    flex-direction: column;
+    /*background: red;*/
+}
+.alin-usu-es{
+    padding: 0.5rem ;
+    margin: 0;
+}
+.container-title-temas-bus{
+    width: 100%;
+    display: flex;
+   /* background: green;*/
+    justify-content: space-between;
+}
+.container-title-temas{
+    width: auto;
+    display: flex;
+    margin:10px 0px;
+    padding: 0;
+   /* background: green;*/
+    justify-content: space-between;
+}
+.izquierda-title a{
+    width: auto;
+    display: block;
+    /*padding: 0.5rem 0.5rem;*/
+    color: #47525E;
+    text-decoration: none;
+    /*border-radius: 10px ;*/
+    transition: all 0.4s linear;
+}
+.izquierda-title a:hover{
+    background: #47525E;
+    color: white;
+}
+.content-respues a{
+    width: auto;
+    display: block;
+    padding: 0.5rem 0.5rem;
+    color: #47525E;
+    text-decoration: none;
+    border-radius: 10px ;
+    transition: all 0.4s linear;/*Para animar los botones*/
+}
+.content-respues a:hover{
+    background: #47525E;
+    color: white;
+}
+/******************* Contacto*************/
+
+
+.h1contac{
+    text-align: center;
+    background: #8492A6;
+}
+.conten-contactos{
+    width: 80%;
+    
+    height: 400px;
+    margin-left: 10%;
+    margin-right: 10%;
+    /*background: red;*/
+}
+.padre {
+    
+    height: 100%;
+    /*IMPORTANTE*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+.navigation-contac {
+    text-align: center;
+}
+.navigation-contac ul{/*Hacemos que los ul no tengan*/
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: inline-block;
+    
+} 
+.navigation-contac ul li{/*Hacemos que los ul no tengan*/
+    margin: 0rem;
+    padding: 0;
+} 
+
+.navigation-contac ul li a{
+    color: #47525E;
+    text-decoration: none;
+}
+.hijo {
+    background: white;
+    width: 350px;
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+.hijo p{
+    display: inline;
+}
+.hijo .centrar p {
+    text-align: justify;
+}
+/************************************Sobre Nosotros******************/
+.contenido{
+    text-align: center;
+    width: 80%;
+    
+    height: 500px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.padre-about{
+    
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    /*background-color: red;*/
+    display: flex;
+    float: none;
+    justify-content: center;
+    align-items: center;
+}
+.hijo-about{
+ 
+    width: 85%;
+    height: 600px;
+    left: 100px; /*ancho padre - ancho hija /2 = valor pixel left*/
+    top: 100px; /*alto padre - alto hija /2 = valor pixel top*/
+   
+  
+    
+}
+.hijo-about .izquierda{
+    float:left;
+    text-align: center;
+}
+.hijo-about .izquierda{
+    float:right;
+}
+.hijo-about h1{
+    text-align: center;
+    font-size: 3rem;
+}
+.tabla-center{
+    text-align: center;
+}
+.Equipo h1{
+    text-align: center;
+}
+.imgWrapper4 {
+    font-size: 0;
+    text-align: center;
+}
+.imgWrapper4 .imgResponsiva {
+    display: inline-block;
+    padding: 4px 4px;
+    font-size: inherit;
+}
+.imgWrapper4 .imgResponsiva {width: 20%; max-width: 225px;}
+
+.imgResponsiva img {
+    height: auto;
+    width: 100%;
+    border-top-left-radius: 50% 50%;
+    border-top-right-radius: 50% 50%;
+    border-bottom-right-radius: 50% 50%;
+    border-bottom-left-radius: 50% 50%;
+}
+.imgResponsiva h1{
+    font-size: 11px;
+    color: 47525E;
+}
+/************************INDEX*********************************/
+
+/* Consideraciones Generales*/
+* {box-sizing: border-box}
+
+/* Configuración del body*/ 
+/*body {font-family: Verdana, sans-serif; margin:0}*/
+
+/* Configuración de los slides*/
+.mySlides {display: none}
+
+/* Slideshow container */
+
+.slideshow-container 
+{
+    /* El Tamaño del Contenedor de Imagenes */
+    max-width: 1000px;
+    position: sticky;
+    float: none;
+    margin: auto;
+    z-index: 1;
+}
+
+/* Next & previous buttons */
+.prev, .next 
+{
+    cursor: pointer;
+    position: absolute;
+    
+    /*La posición de los botones*/
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+
+    /*Color de las flechas*/
+    color: white;
+    font-weight: bold;
+
+    /*Tamaño de las flechas*/
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Posicion del boton next a la derecha */
+.next 
+{
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover 
+{
+    /* Color de fondo para cuando el apuntador del mouse pasa encima*/
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* Configuracion del Texto */
+.text 
+{
+    /* Color del Texto que despliega los nombres*/
+    color: #f2f2f2;
+
+    /* Tmaño de la fuente*/
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+
+    /* Posición del texto en la parte de abajo*/
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Configuracion de los Numeros de la imagenes (1/3 etc) */
+.numbertext 
+{
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* Configuracion de los Puntos indicadores */
+.dot 
+{
+    cursor: pointer;
+    /*Tamaño de los botones*/
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    /*El Radio define la figura*/
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover 
+{
+    /* Coloca de Active y hover*/
+    background-color: #717171;
+}
+
+/* Fading animation */
+.fade 
+{
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade 
+{
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+@keyframes fade 
+{
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) 
+{
+    .prev, .next,.text {font-size: 11px}
+}
+
+.index-cuerpo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.namepage{
+    font-family: "Comic Sans MS", "Comic Sans";
+    text-align: center;
+}
+.index-header{
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;  
+    margin-top: -4rem;
+}
+.index-content-header{
+    width: 20%;
+}
+.index-header .index-separacion{
+    display: inline-block;
+    padding: 4px 4px;
+}
+.botones-index{
+   
+    border: 0; /*anchura, estilo y color borde*/
+    padding: 8px; /*espacio alrededor texto*/
+    background-color: #47525E; /*color botón*/
+    color: #ffffff; /*color texto*/
+    text-decoration: none; /*decoración texto*/
+   
+    font-family: Georgia, 'Times New Roman', Times, serif; /*tipografía texto*/
+    border-radius: 10px; /*bordes redondos*/
+    
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+.botones-index:hover {
+    background-color: #ccc; /* Green */
+    color: #47525E;
+}  
+/*******Preguntas Frecuentes*********/
+.padre-fre{
+    
+    margin: auto;
+    width: 95%;
+    height: 65%;
+    /*background-color: red;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hijo-fre{
+ 
+    width: 50%;
+    height: 100%;
+    
+}
+
+.hijo-fre p.centrado  {
+    text-align: center;
+    font-size: 24px;
+}
+.hijo-fre p.centrado-h {
+    text-align: center;
+    font-size: 15px;
+}
+
+

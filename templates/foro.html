@@ -1,0 +1,113 @@
+{% extends 'base/base.html' %}
+
+<head>
+    <title>{% block title %}Foro de preguntas{% endblock %}</title>
+</head>
+
+<body>
+    {% block content %}
+
+    <h1 style="text-align: center;">Foro de preguntas</h1>
+    <div class="foro-content">
+        <div class="busqueda">
+            <input id="enun" type="text" name="enun" placeholder="Enunciado">
+
+            <label for="fname"> Area:</label>
+            <div class="sidebar-box">
+                <select class="select-css" id="id_ar" name="id_ar">
+
+                    {% for area in areas %}
+                    <option value="{{area.id}}">{{area.nombre}}</option>
+                    {%endfor%}
+                    <option value="0" selected></option>
+                </select>
+            </div>
+            <label for="fname"> Tema:</label>
+
+            <div class="sidebar-box">
+                <select class="select-css" id="id_tem" name="id_tem">
+                    {% for tema in temas %}
+                    <option value={{tema.id}}>{{tema.nombre}}</option>
+                    {%endfor%}
+                    <option value="0" selected></option>
+                </select>
+            </div>
+            <label for="fname"> Fecha:</label>
+            <input type="date" id="date" name="date">
+            <button value="Buscar" id="Buscar">Buscar</button>
+
+
+        </div>
+
+    </div>
+
+    {%block cuerpo%}
+    <div class="preguntas">
+        <div id="busqueda_ajax">
+            <p style="font-size:23px">Preguntas</p>
+            <a href="/formular_p/"><input style="float:right;margin-top:-47px" type="button" class="botones-index"
+                    value="Formular pregunta"></a>
+            {%include "busqueda.html"%}
+        </div>
+    </div>
+    {%endblock%}
+
+    <script>
+        let Buscar = document.getElementById("Buscar");
+        Buscar.addEventListener("click", buscar);
+        function buscar() {
+            //peticion xmlhttprequest general
+            let ajax = new XMLHttpRequest();
+            ajax.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("busqueda_ajax").innerHTML = this.responseText;
+                }
+            }
+            let url = "/search_e/?";
+            let enun = document.getElementById("enun");
+            let id_ar = document.getElementById("id_ar");
+            let id_tem = document.getElementById("id_tem");
+            let date = document.getElementById("date");
+
+            if (enun.value) {
+                url += "enum=" + enun.value + "&";
+            }
+            if (id_ar.value != 0) {
+                url += "id_ar=" + id_ar.value + "&";
+            }
+            if (id_tem.value != 0) {
+                url += "id_tem=" + id_tem.value + "&";
+            }
+            if (date.value) {
+                url += "date=" + date.value;
+            }
+            console.log(url);
+            ajax.open("GET", url, true);
+            ajax.send();
+        }
+
+        aniadir_evento_a_eliminar_pregunta();
+
+        function aniadir_evento_a_eliminar_pregunta() {
+            let eliminarPreg = document.querySelectorAll(".eliminarPreg");
+            for (let i = 0; i < eliminarPreg.length; i++) {
+                let elimP = eliminarPreg[i].addEventListener("click", eliminar_pregunta);
+            }
+        }
+        function eliminar_pregunta() {
+            let objeto = this;
+            let ajax = new XMLHttpRequest();
+            ajax.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    location.reload();
+                }
+            }
+            url = "pregunta_id=" + objeto.getAttribute("pregunta_id");
+            ajax.open('GET', "/ePregunta/?" + url, true)
+            ajax.send();
+        }
+    </script>
+    {% endblock %}
+</body>
+
+</html>

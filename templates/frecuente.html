@@ -1,0 +1,64 @@
+{% extends 'base/base.html' %}
+
+<head>
+    <title>{% block title %} Preguntas Frecuentes{% endblock %}</title>
+</head>
+
+<body>
+    {% block content %}
+    {% load static %}
+    <div class="padre-fre">
+
+        <div class="hijo-fre">
+            <p class="centrado">
+                Stack Question
+            </p>
+            <p class="centrado"> <img src="{% static 'logo-removebg.png' %}" /></p>
+            <p class="centrado-h">"Stack Question" es un sitio de preguntas y respuestas para programadores
+                profesionales y entusiastas. Usted
+                lo crea y ejecuta como parte de la red de sitios de preguntas y respuestas de Stack Exchange . Con su
+                ayuda, estamos trabajando juntos para crear una biblioteca de respuestas detalladas y de alta calidad a
+                todas las preguntas sobre programación.</p>
+
+        </div>
+
+
+    </div>
+    <hr size="2px" width="50%" text-align="center" color="#47525E" />
+
+    <div class="explicacion-fre">
+
+        <div class="explicacion-fre">
+            <div>
+
+            </div>
+            <div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <hr size="2px" width="50%" text-align="center" color="#47525E" />
+    <div class="explicacion-nivel">
+
+    </div>
+    <hr size="2px" width="50%" text-align="center" color="#47525E" />
+    <div class="explicacion-fre">
+
+        <div class="explicacion-fre">
+            <div>
+
+            </div>
+            <div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    {% endblock %}
+</body>
+
+</html>

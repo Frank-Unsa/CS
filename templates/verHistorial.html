@@ -1,12 +1,11 @@
-{% extends 'base/base.html' %}
-
-<head>
-    <title>{% block title %}Ver Historial{% endblock %}</title>
-</head>
-
+{% load static %}
+<!DOCTYPE html>
+<html lang="es" >
+  <head>
+    <meta charset="utf-8">
+    <title>Ver Historial</title>
+  </head>
   <body>
-    {% block content %}
-    <a href="/foro/">pregunta</a>
     {% if user.is_authenticated %}
     <!--<button type="button" name="button" value="Editar Perfil" onclick="editarPerfil">Editar perfil</button>-->
     <a href="../editarPerfil/{{currUser.id}}">Editar perfil</a>
@@ -42,6 +41,5 @@
       {% endif %}
       <!--<h6>Esta es un respuesta {{answer.confiabilidad}}</h6>-->
     {% endfor %}
-    {% endblock %}
   </body>
 </html>

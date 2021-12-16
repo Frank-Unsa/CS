@@ -1,37 +1,86 @@
+{% extends 'base/base.html' %}
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Editar Perfil</title>
-  </head>
-  <body>
-    <h1>Editar Datos</h1>
-    <form class="login-form" method="POST" action="{{currUser.id}}">
-      {% csrf_token %}
-      <p class="login-text">
-        <span class="fa-stack fa-lg">
-          <i class="fa fa-lock"></i>
-        </span>
-      </p>
-      Nombre: <input type="text" class="login-username" autofocus="true" name="nombre" placeholder="Nombre" value="{{currUser.nombre}}"/><br>
-      Contraseña: <input type="password" class="login-password" name="contrasenia" placeholder="Contraseña" value="{{currUser.contrasenia}}" /><br>
-      Celular: <input type="text" class="login-username" autofocus="true" name="celular" placeholder="Celular" value="{{currUser.celular}}" /><br>
-      Fecha de nacimiento: <input type="date" class="login-username" autofocus="true" name="nacimiento" placeholder="Fecha de nacimiento" value="{{fechaCumpleanios.year}}-{{fechaCumpleanios.month}}-{{fechaCumpleanios.day}}" value="00-00-00" /><br>
-      <input type="submit" name="saveChanges" value="Guardar Cambios" class="login-submit" />
-    </form>
-    <h6>Ultima fecha de modificacion: {{ currUser.fecha_de_modificacion }}</h6>
 
+<head>
+  <meta charset="utf-8">
+  <title>Editar Perfil</title>
+  {% load static%}
+  <link rel="stylesheet" href="{% static 'css/editarPerfil.css' %}">
+  <link rel="shortcut icon" type="image/x-icon" href="{% static 'logoPrueba.png' %}">
+</head>
+<meta charset="utf-8">
 
-    <h1>Eliminar Cuenta</h1>
-    <form class="login-form" method="POST" action="../eliminarCuenta/{{currUser.id}}">
-      {% csrf_token %}
-      <p class="login-text">
-        <span class="fa-stack fa-lg">
-          <i class="fa fa-lock"></i>
-        </span>
-      </p>
-        Escibe aqui tu nombre de usuario: <input type="text" class="login-username" autofocus="true" name="nomUsuario" placeholder="Ejm. user001" /><br>
-      <input type="submit" name="saveChanges" value="Eliminar Cuenta" class="login-submit" />
-    </form>
-  </body>
+<body>
+  {% block content %}
+  {# ----- CONTENEDOR EDITAR PERFIL -----#}
+  <div class="contenedor">
+    <div class="perfil">
+      <td style="width: 100px;"></td>
+      <td style="vertical-align: middle; height: 600px;">
+        <img class="alignright size-full wp-image-71" alt="webi" src="{% static 'logo-removebg.png' %}" width="80%"
+          height="95%" />
+
+      </td>
+      <td style="width: 200px;"></td>
+    </div>
+    <div>
+      <div>
+        <h1>ACTUALICE SU INFORMACIÓN</h1>
+        <h1>PERSONAL</h1>
+      </div>
+      <form class="login-form" method="POST" action="{{currUser.id}}">
+        {% csrf_token %}
+        <div class="section">
+          <h1>Nombre Usuario</h1>
+          <h1>Contraseña</h1>
+        </div>
+        <div class="section2">
+          <input type="text" class="login-username" autofocus="true" name="nombre" placeholder="Nombre"
+            value="{{currUser.nombre}}" />
+          </h4> <input type="password" class="login-password" name="contrasenia" placeholder="Contraseña"
+            value="{{currUser.contrasenia}}" />
+        </div>
+        <div class="section3">
+          <h1>celular</h1>
+          <h1>Fecha de Nacimiento</h1>
+        </div>
+        <div class="section4">
+          <input type="text" class="login-username" autofocus="true" name="celular" placeholder="Celular"
+            value="{{currUser.celular}}" />
+          <input type="date" class="login-username" autofocus="true" name="nacimiento" placeholder="Fecha de nacimiento"
+            value="{{fechaCumpleanios.year}}-{{fechaCumpleanios.month}}-{{fechaCumpleanios.day}}" value="00-00-00" />
+        </div>
+        <div class="section5">
+          <div>
+            <br>
+            <input type="submit" name="saveChanges" value="Guardar Cambios" class="login-submit" />
+          </div>
+      </form>
+      <div>
+        <h1>Ultima fecha de modificación: {{ currUser.fecha_de_modificacion }}</h1>
+      </div>
+    </div>
+  </div>
+  </div>
+  {# ----- CONTENEDOR ELIMINAR PERFIL -----#}
+  <div class="contenedor2">
+    <div class="name">
+      <br>
+      <h1>Eliminar Cuenta</h1>
+      <h1>STACK QUESTION</h1>
+    </div>
+    <div class="c2">
+      <form class="login-form" method="POST" action="../eliminarCuenta/{{currUser.id}}">
+        {% csrf_token %}
+        <br>
+        <h1>Escriba su nombre de usuario:</h1> <input type="text" class="login-username" autofocus="true"
+          name="nomUsuario" placeholder="Ejm. user001" />
+        <input type="submit" name="saveChanges" value="Eliminar Cuenta" class="login-submit" />
+      </form>
+    </div>
+  </div>
+  {% endblock %}
+</body>
+
 </html>

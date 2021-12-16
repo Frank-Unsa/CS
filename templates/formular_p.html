@@ -1,0 +1,62 @@
+{% extends 'base/base.html' %}
+
+<head>
+    <title>{% block title %}Formular Pregunta{% endblock %}</title>
+</head>
+
+<body>
+    <!-- F -->
+    {% block content %}
+    <h1 style="text-align: center;">Formula tu pregunta</h1>
+    <div class="content-form-preg">
+        <form action="/Enviar_Pregunta/" class="form" method="get">
+            <input type="hidden" name="usuario" value="{{user.username}}">
+            <div class="content-form-selects">
+                <div class="select-primero">
+                    <label for="fname"> Area:</label>
+                    <div class="sidebar-box">
+                        <select class="select-css" id="id_ar" name="id_ar">
+                            {% for area in areas %}
+                            <option value="{{area.id}}">{{area.nombre}}</option>
+                            {%endfor%}
+                            <option value="0" selected></option>
+                        </select>
+                    </div>
+                </div>
+                <div class="select-primero">
+                    <label for="fname"> Tema:</label>
+                    <div class="sidebar-box">
+                        <select class="select-css" id="id_tem" name="id_tem">
+                            {% for tema in temas %}
+                            <option value={{tema.id}}>{{tema.nombre}}</option>
+                            {%endfor%}
+                            <option value="0" selected></option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <br>
+            <div class="content-form-title">
+                <label for="fname"> Titulo:</label>
+                <div>
+                    <textarea class="textbox" id="enun" name="enun" rows="1" cols="45" autofocus="" required=""
+                        placeholder="Escribir la pregunta"></textarea>
+                </div>
+            </div>
+           
+           
+            <br>
+            <div class="content-form-title">
+                <label for="fname"> Descripcion:</label><br>
+                <textarea class="textbox" id="descrip" name="descrip" rows="4" cols="45"
+                    placeholder="¿Porque geneneraste la pregunta?"></textarea>
+            </div>
+            <br>
+            <button type="submit" id="Enviar">Enviar</button>
+        </form>
+    </div>
+    {% endblock %}
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+{% extends 'base/base.html' %}
+
+<head>
+    <title>{% block title %}Usuario - {{usuario.usuario}}{% endblock %}</title>
+</head>
+
+<body>
+    {% block content %}
+    <div class="usuario-per">
+        <div class="usuario-info">
+            <h3>Nombre del Usuario: {{usuario.usuario}}</h3>
+            <p>se unio el {{usuario.fecha_de_creacion}}</p>
+            {%if nivel%}
+            <span>Nivel {{nivel}}</span><br>
+            {%else%}
+        </div>
+        <div class="usuario-container">
+            <div class="usuario-pre">
+                <span>Preguntas más populares</span>
+                <ul>
+                    {%if preguntas%}
+                    {%for pregunta in preguntas%}
+                    <li><a href="/pregunta/?id={{pregunta.id}}">{{pregunta.enunciado}}</a></li>
+                    {%endfor%}
+                    {%else%}
+                    <span>No presenta preguntas populares</span><br>
+                    {%endif%}
+                </ul>
+            </div>
+
+            <span>No presenta Nivel</span><br>
+            {%endif%}
+            <div class="usuario-res">
+                <span>Mejores Respuestas</span><br>
+                <ul>
+                    {%if respuestas%}
+                    {%for respuesta in respuestas%}
+                    <li><a href="/pregunta/?id={{respuesta.id}}">{{respuesta.contenido}}</a></li>
+                    {%endfor%}
+                    {%else%}
+                    <span>No presenta preguntas populares</span><br>
+                    {%endif%}+
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+{% for pregunta in preguntas %}
+<br>
+<div class="content-pre">
+    <div class="content-pregun">
+        <div class="pregunta-foro">
+            <div class="container-title-temas-bus">
+                <div class="izquierda-title" style="display: flex; flex-direction: column;width: 100%;">
+                    
+                        <a href="/pregunta/?id={{pregunta.0.id}}">{{forloop.counter}} {{pregunta.0.enunciado}}</a></span>
+                        
+                        <div class="conentsubtemas">
+                            <div class="filapre">
+                                <div class="alinedo-usuario-p">
+                                    <div class="alin-usu-es">Hecho por:</div>
+                                    <div>
+                                        <a href="/usuario/?usuario={{pregunta.1.id}}">{{pregunta.1.usuario}}</a>
+                                    </div>
+                                    <div class="alin-usu-es">
+                                        Última fecha de modificacion:{{pregunta.1.fecha_de_modificacion}}
+                                    </div>
+                                </div>
+            
+                            </div>
+                        </div>
+                </div>
+                
+                {%if user.username == pregunta.1.usuario%}
+                <div class="column-pre " style="margin-top: 0px;">
+                    <span>Tema:{{pregunta.0.tema}}</span>
+                    <span>Area:{{pregunta.0.area}}</span>
+                </div>
+
+            </div>
+            
+            
+
+            <div class="content-desc">
+                <div>{{pregunta.0.descripcion}}</div>
+                
+                <div>
+                    <span class="botones-index eliminarPreg" pregunta_id="{{pregunta.0.id}}"
+                    style="float:right; font-size: 15px;cursor:pointer;">Eliminar</span>
+                </div>
+                <br><br>
+            {%endif%}
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+{%endfor%}

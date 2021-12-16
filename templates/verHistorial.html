@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es" >
+  <head>
+    <meta charset="utf-8">
+    <title>Ver Historial</title>
+  </head>
+  <body>
+    {% if user.is_authenticated %}
+    <!--<button type="button" name="button" value="Editar Perfil" onclick="editarPerfil">Editar perfil</button>-->
+    <a href="../editarPerfil/{{currUser.id}}">Editar perfil</a>
+    {% endif %}
+    <h2>Nombre</h2>
+    <h4>{{ currUser.nombre }}</h4>
+    <h2>Correo</h2>
+    <h4>{{ request.user.email }}</h4>
+
+    <h2>Contactalo(a)</h2>
+    <h4>{{ currUser.celular }}</h4>
+
+    <h3>-Actualmente es un usuario {{ currUser.nivel }}</h3>
+    <h3>-Se unió el {{ currUser.fecha_de_creacion }}</h3>
+
+    <h2>Preguntas recientes</h2>
+    {% for question in questions %}
+    <a href="../pregunta/?id={{question.id}}">{{ question.enunciado }}</a><br><a href="../eliminarPregunta/{{ question.id }}">Eliminar</a><br> 
+    {% endfor %}
+
+    <h2>Actividad reciente</h2>
+    {% for answer in resFiltradas %}<!-- respuestas de usuario-->
+    <h3>Respondiste a la pregunta:  </h3>
+      {% for someQuestion in allQuestions %}
+        {% if someQuestion.id == answer.pregunta_id %}
+        <a style="color:red" href="../pregunta/?id={{ someQuestion.id }}">{{ someQuestion.enunciado }}</a>
+        {% endif%}
+      {% endfor %}
+      {% if answer.confiabilidad == "normal" %}
+        <h4 style="color:blue">"{{ answer.contenido }}"</h4><br><a href="../eliminarRespuesta/{{ answer.id }}">Eliminar Respuesta ...</a>
+      {% else %}
+        <h4 style="color:brown">"{{ answer.contenido }}"</h4><br><a href="../eliminarRespuesta/{{ answer.id }}">Eliminar Respuesta ...</a>
+      {% endif %}
+      <!--<h6>Esta es un respuesta {{answer.confiabilidad}}</h6>-->
+    {% endfor %}
+  </body>
+</html>

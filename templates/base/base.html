@@ -1,0 +1,106 @@
+{% load static %}
+<!DOCTYPE <!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'logoPrueba.png' %}">
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link rel="stylesheet" href="{% static 'css/registro.css' %}">
+    <link rel="stylesheet" href="{% static 'css/form-pregunta.css' %}">
+    <link rel="stylesheet" href="{% static 'css/editarPerfil.css' %}">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Raleway:500,600&display=swap" rel="stylesheet">
+    
+    
+    
+    
+    <title>{% block title %} Document {% endblock %}</title>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container logo-nav-container">
+
+            <img class="logo2" src="{% static 'logoPrueba.png' %}" alt="Imagen">
+            <a href="/inicio/" class="logo">Stack Question</a>
+
+            <span class="menu-icon">Ver Menu</span>
+
+
+            <nav class="navigation">
+                <ul>
+                    <li><a href="/foro/">Inicio</a></li>
+                    <li><a href="../preguntas_frecuentes/">Preguntas frecuentes</a></li>
+                    <li><a href="../about/">Sobre Nosotros</a></li>
+                    <li><a href="../contact/">Contactos</a></li>
+
+                    <!--Buscar-->
+
+                    {% if request.user.is_authenticated %}
+                    <!-- AL desarrollar el frontend se debe mejorar esta presentacion-->
+                    <li>
+                        <form class="form-menu" action={% url 'logout_user' %} method="post">
+                            {% csrf_token %}
+                            <input type="submit"class="botones" value="Cerrar Sesión">
+                        </form>
+                    </li>
+                    <li>
+                        <p><a href="../verHistorial/{{request.user.id}}">{{request.user.username }}</a></p>
+                        
+                    </li>
+                    {% else %}
+                    <!--Botones para registrarse e iniciar sesion-->
+                    <li><a href={% url 'register' %}><input type="button" class="botones" value="Registrarse"></a></li>
+
+                    <li><a href={% url 'login' %}><input type="button" class="botones" value="Iniciar Sesión"></a></li>
+
+                    {% endif %}
+
+
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="wrapper">
+        {% block content %}
+        <h5>Contenido</h5>
+        {% endblock %}
+    </div>
+    {% block footer %}
+    <footer class="footer">
+        <div class="container2 logo-nav-container">
+            <img class="logo1" src="{% static 'logoPrueba.png' %}" alt="Imagen">
+
+            <nav class="navigation">
+                <ul>
+                    <li><a href="">Inicio</a></li>
+                    <li><a href="../preguntas_frecuentes/">Preguntas frecuentes</a></li>
+                    <li><a href="../about/">Sobre Nosotros</a></li>
+                    <li><a href="../contact/">Contactos</a></li>
+                </ul>
+            </nav>
+            <div class="redesSociales">
+                <a href="https://www.facebook.com/groups/307217284628410" target="_blank"
+                    class="fa fa-facebook-square fa-2x"></a>
+                <a href="https://twitter.com/QuestionStack" target="_blank" class="fa fa-twitter-square fa-2x"></a>
+            </div>
+        </div>
+
+        <p>(C) Stack Question 2021</p>
+    </footer>
+    {% endblock %}
+    <script src="https://code.jquery.com/jquery-3.3.1.js" type="text/javascript"></script>
+    <script src="{% static 'scripts/script.js' %}"></script>
+
+    <script src="{% static 'scripts/script-index.js' %}"></script>
+    
+
+    
+</body>
+
+</html>

@@ -1,0 +1,137 @@
+{% extends 'base/base.html' %}
+
+<head>
+    <title>{% block title %} Preguntas Frecuentes{% endblock %}</title>
+</head>
+
+<body>
+    {% block content %}
+    {% load static %}
+
+    <div class="padre-fre">
+
+        <div class="hijo-fre">
+            <p class="centrado">
+                Stack Question
+            </p>
+            <p class="centrado"> <img src="{% static 'logo-removebg.png' %}" /></p>
+            <p class="centrado-h">"Stack Question" es un sitio de preguntas y respuestas para programadores
+                profesionales y entusiastas. Usted
+                lo crea y ejecuta como parte de la red de sitios de preguntas y respuestas de Stack Exchange . Con su
+                ayuda, estamos trabajando juntos para crear una biblioteca de respuestas detalladas y de alta calidad a
+                todas las preguntas sobre programación.</p>
+
+        </div>
+
+
+    </div>
+
+    <hr size="2px" width="70%" text-align="center" color="#47525E" />
+    <h1 class="centrado-fre">Comenzar</h1>
+
+    <div class="Contenedor-comenzar">
+        <div class="exp-login">
+            <div class="exp-fre-pa">
+                <div class="imegen-comenzar">
+                    <p class="imgiz-fre"><img src="{% static 'registro.png' %}"></p>
+                </div>
+
+                <div class="contco-fre">
+
+                    Iniciamos primeramente con la creacion de nuestra cuenta de usuario donde deberemos ingresar
+                    nuestros
+                    datos (Nombre de Usuario, Email, Nombre, Apellidos, Contraseña) Tras eso nuestra cuenta estara
+                    creada y
+                    podremos iniciar sesión como debe ser y empezar la busqueda de nuestras dudas.
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <hr size="2px" width="50%" text-align="center" color="#47525E" />
+
+    <h1 class="centrado-fre">¿Como Funciona el Foro?</h1>
+    <div class="Contenedor-comenzar">
+        <div class="exp-login">
+            <div class="exp-fre-pa">
+                <div class="imegen-comenzar">
+                    <p class="imgde-fre"><img src="{% static 'forop.png' %}" width="400px" height="210px"></p>
+                </div>
+                <div class="contbua-fre">En nuestro foro puedes buscar tus dudas ya sea ingresando la pregunta, area,
+                    tema o fecha de publicacion entre el listado de las preguntas realizadas por los usuarios. De esta
+                    forma puedes resolver tus dudas sobre problemas reales en los cuales te encuentres o simplemente en
+                    los que estes interesado y obtener respuestas gracias a los demas usuarios.
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <div class="Contenedor-comenzar">
+        <div class="exp-login">
+            <div class="exp-fre-pa">
+                <div class="imegen-comenzar">
+                    <p class="imgiz-fre"><img src="{% static 'preguntas.png' %}" width="400" height="210"></p>
+                </div>
+
+                <div class="contbub-fre">Y en caso ningun usuario se haya preguntado lo mismo que ti, puedes tu mismo
+                    realizar la pregunta y recibir respuestas de manera directa, donde las respuestas pueden recibir
+                    tanto
+                    likes
+                    como dislikes para verificar la confianza en las mismas.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr size="2px" width="50%" text-align="center" color="#47525E" />
+    <h1 class="centrado-fre">Formular tu Pregunta</h1>
+
+    <div class="Contenedor-comenzar">
+
+        <div class="exp-login">
+            <div class="exp-fre-pa">
+                <div class="imegen-comenzar">
+                    <p class="imgde-fre"><img src="{% static 'formula.png' %}" width="400" height="220"></p>
+                </div>
+
+                <div class="contfo-fre">
+                    Para formular tu propia pregunta presionas el boton "Formular Pregunta" y te aparecera la siguiente
+                    interfaz
+                    Aqui deberas especificar el "Tema" y "Area" de interes, ademas especificar tu pregunta en el
+                    "Titulo" y
+                    agregar si quieres
+                    una "Descripcion" para aclarar la misma, ingresando eso solo queda publicar tu pregunta presionando
+                    "Enviar".
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <hr size="2px" width="50%" text-align="center" color="#47525E" />
+    <h1 class="centrado-fre">Nivel de Usuario</h1>
+    <div class="Contenedor-comenzar">
+        <div class="exp-login">
+            <div class="exp-fre-pa">
+                <div class="imegen-comenzar">
+
+                    <p class="imgiz-fre"><img src="{% static 'niveles.png' %}" width="400" height="220"></p>
+                </div>
+                <div class="contni-fre">
+                    Nuestros usuarios tienen la posibilidad de aumentar de nivel mientras tenga un mayor
+                    nivel de aprovacion mediante la cantidad de likes en sus respuestas aumentando su confiabilidad
+                    como usuario <br><br> (Básico => Intermedio => Avanzado=> Destacado)
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <hr size="2px" width="50%" text-align="center" color="#47525E" />
+    {% endblock %}
+</body>
+
+</html>

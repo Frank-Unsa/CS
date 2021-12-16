@@ -1,0 +1,73 @@
+{% extends 'base/base.html' %}
+
+<head>
+
+    <title>{% block title %} Inicio {% endblock %}</title>
+    {% load static %}
+    <link href="{% static 'css/foundation.css' %}" type="text/css" rel="stylesheet" media="screen" />
+    <link href="{% static 'css/index.css' %}" type="text/css" rel="stylesheet" media="screen" />
+</head>
+
+<body>
+    {% block content %}
+
+
+    <div class="namepage">
+        <h1>Stack Question</h1>
+    </div>
+
+    <div class="index-header">
+        <div class="index-content-header">
+            <div class="index-separacion">
+                ¿Nuevo Aqui?
+            </div>
+            <div class="index-separacion"> <i class="fa fa-arrow-right"></i></div>
+            <div class="index-separacion">
+                <a href="../preguntas_frecuentes/"><input type="button" class="botones-index" value="Recorrido"></a>
+            </div>
+        </div>
+    </div>
+    <br>
+    {% load static %}
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 3</div>
+            <img src="{% static 'primera.jpg' %}" style="width:100%">
+            <div class="text">Stack Question</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">2 / 3</div>
+            <img src="{% static 'segunda.jpg' %}" style="width:100%">
+            <div class="text">Stack Question</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">3 / 3</div>
+            <img src="{% static 'tercera.jpg' %}" style="width:100%">
+            <div class="text">Stack Question</div>
+        </div>
+
+        <!-- Las Flechas -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    </div>
+    <br>
+
+    <!-- Los puntos -->
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+    <br>
+    <div class="index-cuerpo">
+        <a href="/foro/"><input type="button" class="botones-index" value="¡ Inicia Ya !"></a>
+
+    </div>
+    {% endblock %}
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+
+.conten-reg{
+    width: 80%;
+    
+    height: 620px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.padre-reg{
+    height: 100%;
+    /*IMPORTANTE*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hijo-reg .messages{
+    
+     text-align: center;
+     margin-left: -20px;
+ }
+ .hijo-reg .messages .messages ul{
+     list-style: none;
+ }
+.hijo-reg{
+    background: white;
+    width: 330px;
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.form {
+    width: 300px;
+    padding: 10px;
+    background: white;
+    text-align: center;
+}
+
+.form-title {
+
+    color: #47525E;
+    
+    font-weight: 500;
+}
+.messages{
+   
+    text-align: center;
+    margin-left: -20px;
+}
+.messages ul{
+    list-style: none;
+    
+
+}
+.form input, .form button[type="submit"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 10px auto;
+    text-align: center;
+    border: 2px solid #8492A6;
+    padding: 5px 5px;
+    width: 200px;
+    outline: none;
+    color: #47525E;
+    border-radius: 24px;
+    transition: 0.25s;
+}
+
+.form input:focus {
+    width: 280px;
+    border-color: #8492A6;
+}
+
+.form button[type="submit"] {
+    border: 0;
+    background: #47525E;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #47525E;
+    padding: 8px 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.form button[type="submit"]:hover {
+    background: none;
+    color: #47525E;
+}

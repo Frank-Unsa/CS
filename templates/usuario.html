@@ -6,44 +6,54 @@
 
 <body>
     {% block content %}
-    <div class="usuario-per">
-        <div class="usuario-info">
-            <h3>Nombre del Usuario: {{usuario.usuario}}</h3>
-            <p>se unio el {{usuario.fecha_de_creacion}}</p>
-            {%if nivel%}
-            <span>Nivel {{nivel}}</span><br>
-            {%else%}
-        </div>
-        <div class="usuario-container">
-            <div class="usuario-pre">
-                <span>Preguntas más populares</span>
-                <ul>
-                    {%if preguntas%}
-                    {%for pregunta in preguntas%}
-                    <li><a href="/pregunta/?id={{pregunta.id}}">{{pregunta.enunciado}}</a></li>
-                    {%endfor%}
-                    {%else%}
-                    <span>No presenta preguntas populares</span><br>
-                    {%endif%}
-                </ul>
-            </div>
+    {% load static %}
 
-            <span>No presenta Nivel</span><br>
-            {%endif%}
-            <div class="usuario-res">
-                <span>Mejores Respuestas</span><br>
-                <ul>
-                    {%if respuestas%}
-                    {%for respuesta in respuestas%}
-                    <li><a href="/pregunta/?id={{respuesta.id}}">{{respuesta.contenido}}</a></li>
-                    {%endfor%}
-                    {%else%}
-                    <span>No presenta preguntas populares</span><br>
-                    {%endif%}+
+    <div class="usuario-perfil2">
+        <div class="usuario-per-con">
+            <div class="usuario-info">
+                <br>
+                <p style="font-size: 28px;">Nombre del Usuario: {{usuario.usuario}}</p>
+                <p style="font-size: 16px;">Se unió a Stack Question el {{usuario.fecha_de_creacion}}</p>
+                {%if nivel%}
+                <p style="font-size: 14px;">Se encuentra en el Nivel {{nivel}}</p>
+                {%else%}
+                <p style="font-size: 14px;">No presenta Nivel</p>
+                {%endif%}
+            </div>
+            <hr size="2px" width="70%" text-align="center" color="#47525E" />
+            <div class="pre-res">
+                <div class="usuario-container">
+                    <div class="usuario-con-izq">
+                        <p>Preguntas más populares</p><br>
+                        <ul>
+                            {%if preguntas%}
+                            {%for pregunta in preguntas%}
+                            <li><a href="/pregunta/?id={{pregunta.id}}">{{pregunta.enunciado}}</a></li>
+                            {%endfor%}
+                            {%else%}
+                            <span>No presenta preguntas populares</span><br>
+                            {%endif%}
+                        </ul>
+                    </div>
+
+                    <div class="usuario-con-der">
+                        <p>Mejores Respuestas</p><br>
+                        <ul>
+                            {%if respuestas%}
+                            {%for respuesta in respuestas%}
+                            <li><a href="/pregunta/?id={{respuesta.id}}">{{respuesta.contenido}}</a></li>
+                            {%endfor%}
+                            {%else%}
+                            <span>No presenta preguntas populares</span><br>
+                            {%endif%}
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     {% endblock %}
+
 </body>
 
 </html>

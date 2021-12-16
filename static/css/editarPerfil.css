@@ -28,8 +28,11 @@
     grid-gap: 5px;
 }
 .section9{
-    display: grid;
+    display:block;
     grid-gap: 5px;
+    font-size: 9px !important;
+    line-height: 12px !important;
+   
 }
 .perfil{
     display: grid;
@@ -64,24 +67,41 @@
     margin-top: 10%;
     font-size: 2px !important;
 }
-.section9-a{
+.a{
     text-align:justify;
     margin-left: 5%;
     margin-top: 2%;
+    
 }
 .b{
-    margin-top: 2%; 
+    margin-top: 2%;
     text-align:justify;
     margin-left: 5%;
 }
-
-
+.nombre{
+    margin-top: 7%;
+}
+.correo{
+    margin-top: 7%;
+}
+.contacto{
+    margin-top: 7%;
+}
+.nivel{
+    margin-top: 7%;
+}
+.fecha{
+    margin-top: 7%;
+}
+.editar{
+    margin-top: 7%;
+}
 .bb{
     border-width:1px;
     border-style:solid;
     border-color:rgb(105, 105, 105);
     background-color: rgb(205, 213, 221);
-    height: auto;
-    min-height: 200px;
+    height: 40%;
     margin-right: 5%;
+    display: flex;
 }
